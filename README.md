@@ -70,6 +70,12 @@ of the new bundle.
 }
 ```
 
+```bash
+$ skopeo inspect --raw docker://quay.io/konflux-ci/tekton-catalog/task-init@sha256:ebfb603b73c2e1500fa1d2c757a585bc2da5043afe0798abdf61466e26fd2b0c
+
+FATA[0001] ...: manifest unknown
+```
+
 `task-git-clone`, which is replaced via the static `replacementName`, gets a correct
 digest.
 
@@ -99,6 +105,12 @@ digest.
   "currentVersion": "0.1",
   "fixedVersion": "0.1"
 }
+```
+
+```bash
+$ skopeo inspect --raw docker://quay.io/konflux-ci/tekton-catalog/task-git-clone@sha256:7939000e2f92fc8b5d2c4ee4ba9000433c5aa7700d2915a1d4763853d5fd1fd4
+
+# works
 ```
 
 ## Expected behavior
