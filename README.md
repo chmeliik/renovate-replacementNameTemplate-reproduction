@@ -1,4 +1,4 @@
-# Renovate discussion number TBD
+# Renovate discussion [37744][renovate-37744]
 
 Replacing Tekton bundle (docker image) via `replacementNameTemplate` results
 in incorrect `newDigest`, `replacementName` works as expected.
@@ -150,9 +150,10 @@ digest correctly.
 
 ## Link to the Renovate issue or Discussion
 
-TBD
+[37744][renovate-37744]
 
 [rhinit]: https://quay.io/redhat-appstudio-tekton-catalog/task-init
 [kfluxinit]: https://quay.io/konflux-ci/tekton-catalog/task-init
 [rhclone]: https://quay.io/redhat-appstudio-tekton-catalog/task-git-clone
 [kfluxclone]: https://quay.io/konflux-ci/tekton-catalog/task-git-clone
+[renovate-37744]: https://github.com/renovatebot/renovate/discussions/37744
