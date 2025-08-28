@@ -113,6 +113,10 @@ $ skopeo inspect --raw docker://quay.io/konflux-ci/tekton-catalog/task-git-clone
 # works
 ```
 
+The renovate job reports an error and opens a PR only for the git-clone task. I suspect
+the reason is what I describe above, though I cannot tell from the job logs (attached:
+[`renovate.log`](renovate.log)).
+
 ## Expected behavior
 
 Expected `replacementName` and `replacementNameTemplate` to both resolve the new
