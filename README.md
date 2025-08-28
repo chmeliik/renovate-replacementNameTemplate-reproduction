@@ -115,7 +115,33 @@ $ skopeo inspect --raw docker://quay.io/konflux-ci/tekton-catalog/task-git-clone
 
 The renovate job reports an error and opens a PR only for the git-clone task. I suspect
 the reason is what I describe above, though I cannot tell from the job logs (attached:
-[`renovate.log`](renovate.log)).
+[`renovate.log`](renovate.log)). The relevant part seems to be this one, but it doesn't
+mention the specific problem.
+
+```json
+{
+  "branchName": "renovate/quay.io-redhat-appstudio-tekton-catalog-task-init-replacement",
+  "prNo": null,
+  "prTitle": "Replace quay.io/redhat-appstudio-tekton-catalog/task-init Docker tag with quay.io/konflux-ci/tekton-catalog/task-init 0.2",
+  "result": "error",
+  "upgrades": [
+    {
+      "datasource": "docker",
+      "depName": "quay.io/redhat-appstudio-tekton-catalog/task-init",
+      "displayPending": "",
+      "fixedVersion": "0.2",
+      "currentVersion": "0.2",
+      "currentValue": "0.2",
+      "currentDigest": "sha256:ebfb603b73c2e1500fa1d2c757a585bc2da5043afe0798abdf61466e26fd2b0c",
+      "newValue": "0.2",
+      "newDigest": "sha256:ebfb603b73c2e1500fa1d2c757a585bc2da5043afe0798abdf61466e26fd2b0c",
+      "packageFile": ".tekton/pipeline.yaml",
+      "updateType": "replacement",
+      "packageName": "quay.io/redhat-appstudio-tekton-catalog/task-init"
+    }
+  ]
+}
+```
 
 ## Expected behavior
 
