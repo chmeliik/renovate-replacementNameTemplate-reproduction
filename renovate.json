@@ -1,1 +1,31 @@
-{}
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "enabledManagers": [
+    "tekton"
+  ],
+  "tekton": {
+    "managerFilePatterns": [
+      "/\\.yaml$/"
+    ],
+    "includePaths": [
+      ".tekton/**"
+    ]
+  },
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "quay.io/redhat-appstudio-tekton-catalog/*"
+      ],
+      "replacementNameTemplate": "{{{replace 'redhat-appstudio-tekton-catalog' 'konflux-ci/tekton-catalog' packageName}}}"
+    },
+    {
+      "matchPackageNames": [
+        "quay.io/redhat-appstudio-tekton-catalog/task-git-clone"
+      ],
+      "replacementName": "quay.io/konflux-ci/tekton-catalog/task-git-clone"
+    }
+  ]
+}
